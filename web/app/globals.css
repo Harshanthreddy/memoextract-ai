@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --apple-bg: #000000;
+  --apple-surface: rgba(18, 18, 20, 0.82);
+  --apple-card: rgba(28, 28, 30, 0.65);
+  --apple-card-hover: rgba(38, 38, 42, 0.75);
+  --apple-card-active: rgba(48, 48, 54, 0.85);
+  --apple-border: rgba(255, 255, 255, 0.1);
+  --apple-border-subtle: rgba(255, 255, 255, 0.06);
+  --apple-blue: #0071E3;
+  --apple-blue-light: #0A84FF;
+  --apple-blue-glow: rgba(10, 132, 255, 0.35);
+  --apple-green: #30D158;
+  --apple-amber: #FF9F0A;
+  --apple-purple: #BF5AF2;
+  --apple-red: #FF453A;
+  --apple-text: #F5F5F7;
+  --apple-text-secondary: #86868B;
+  --apple-text-tertiary: #636366;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #000000;
+  color: #F5F5F7;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Plus Jakarta Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background Ambient Glow */
+.apple-ambient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: 
+    radial-gradient(at 50% 0%, rgba(10, 132, 255, 0.14) 0px, transparent 60%),
+    radial-gradient(at 100% 100%, rgba(191, 90, 242, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(48, 209, 88, 0.06) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+::selection {
+  background: rgba(10, 132, 255, 0.35);
+  color: #FFFFFF;
+}
+
+/* Animations */
+@keyframes apple-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.7); }
+  70% { box-shadow: 0 0 0 7px rgba(48, 209, 88, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(48, 209, 88, 0); }
+}
+
+.apple-pulse-green {
+  animation: apple-pulse 2s infinite;
+}
+
+@keyframes float-cloud {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.float-cloud {
+  animation: float-cloud 3.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-bar {
+  background: linear-gradient(90deg, rgba(10, 132, 255, 0.1) 0%, rgba(10, 132, 255, 0.4) 50%, rgba(10, 132, 255, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}

@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+groq
+pdf2image
+pillow
+pydantic
+python-dotenv
+pytest
+python-multipart
+PyPDF2
